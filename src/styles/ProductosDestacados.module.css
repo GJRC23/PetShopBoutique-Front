@@ -1,50 +1,80 @@
 .productosContainer {
+  background-color: white;
   text-align: center;
-  background-color: #f0f0f0;
   padding: 40px 0;
+  position: relative; /* Para asegurar que los botones se posicionen correctamente */
 }
 
 .productosContainer h2 {
+  background-color: #8B4513;
   font-family: 'Instrument Serif', serif;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin: 20px 0px;
 }
 
 .carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  position: relative;
 }
 
-.productos {
+.slider{
+  margin: auto;
+  width: 90%;
+}
+
+.carouselArea {
   display: flex;
-  gap: 20px; /* Espacio entre los productos */
+  align-items: center;
+  justify-content: center;
 }
 
 .producto {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
 }
 
 .producto h3 {
+  color: #8B4513;
   font-family: 'Inria Serif', serif;
   font-size: 1.2rem;
   margin-top: 10px;
 }
 
-.arrow {
-  background-color: red;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0 20px;
+.producto img {
+  object-fit: contain; /* Ajusta la imagen dentro del contenedor */
+  height: 400px; /* Mantener una altura consistente para todas las imágenes */
+  width: auto; /* Asegurar que las imágenes mantengan sus proporciones */
 }
 
-.arrow:hover {
-  color: #8B4513;
+/* Botones de navegación: Back y Next */
+.carouselButtonBack, .carouselButtonNext {
+  position: absolute;
+  top: 50%; /* Colocamos los botones en el centro verticalmente */
+  transform: translateY(-50%);
+  background-color: #8B4513; /* Fondo semi-transparente */
+  border: none;
+  font-size: 2rem;
+  padding: 0px 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease-in-out;
+  z-index: 1; /* Asegura que los botones estén sobre las imágenes */
+}
+
+.carouselButtonBack:hover, .carouselButtonNext:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Cambiar color de fondo en hover */
+  color: #8B4513; /* Cambiar color de la flecha en hover */
+}
+
+.carouselButtonBack {
+  left: 20px; /* Botón izquierdo, dentro del carrusel */
+}
+
+.carouselButtonNext {
+  right: 20px; /* Botón derecho, dentro del carrusel */
 }

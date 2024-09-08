@@ -19,17 +19,17 @@ function Header() {
 
       <div className={styles.banner}>
         <nav className={styles.navBar}>
-          <Image src={logo} alt="Logo Boutique" width={100} height={100} />
+        <Link href="/Home"><Image src={logo} alt="Logo Boutique" width={100} height={100} /></Link>
           <ul className="inria-serif-regular">
             <li><Link href="/alimentos">ALIMENTOS</Link></li>
-            <li><Link href="/juguetes">JUGUETES</Link></li>
             <li><Link href="/accesorios">ACCESORIOS</Link></li>
-            <li><Link href="/zonas-de-envio">ZONAS DE ENVÍO</Link></li>
             <li><Link href="/indumentaria">INDUMENTARIA</Link></li>
+            <li><Link href="/juguetes">JUGUETES</Link></li>
+            <li><Link href="/contacto">ZONAS DE ENVÍO</Link></li>
             <li><Link href="/contacto">CONTACTO</Link></li>
           </ul>
         </nav>
-        <h1 className="instrument-serif-regular">PET SHOP BOUTIQUE</h1>
+        <h1 className="instrument-serif-regular"><Link href="/Home">PET SHOP BOUTIQUE</Link></h1>
       </div>
     </header>
   );

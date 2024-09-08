@@ -27,23 +27,12 @@ export default function handler(req, res) {
     {
       id: 5,
       nombre: 'Accesorios Variados',
-      imagen: '/images/CAT CHOW ADULTOS SABOR PESCADO Y POLLO.jpeg',
+      imagen: '/images/balanced-cordero.png',
+      destacado: true,
     },{
       id: 6,
       nombre: 'Alimento Premium',
-      imagen: '/images/Vitalcan Balanced Adulto.jpeg',
-      destacado: true,
-    },
-    {
-      id: 7,
-      nombre: 'Alimento Balanceado',
-      imagen: '/images/PRO PLAN ADULT DOG RAZA MEDIANA.png',
-      destacado: true,
-    },
-    {
-      id: 8,
-      nombre: 'Accesorios Variados',
-      imagen: '/images/DOGUI ADULTOS.png',
+      imagen: '/images/CatChow.jpg',
       destacado: true,
     }
   ];

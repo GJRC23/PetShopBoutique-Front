@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import styles from '../styles/ProductosDestacados.module.css';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css'; // Importamos los estilos del carrusel
+import styles from '../styles/ProductosDestacados.module.css'; // Asegúrate de tener el archivo CSS
 
 function ProductosDestacados() {
   const [productos, setProductos] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     // Simulando una llamada a la API
@@ -16,40 +17,48 @@ function ProductosDestacados() {
     fetchProductos();
   }, []);
 
-  const handleNext = () => {
-    // Avanzar al siguiente producto, sin repetir hasta que lleguemos al último
-    setCurrentIndex((prevIndex) =>
-      prevIndex === productos.length - 4 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrev = () => {
-    // Retroceder al producto anterior, sin volver al primero hasta el final
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? productos.length - 4 : prevIndex - 1
-    );
-  };
+  if (productos.length === 0) {
+    return <p>Cargando productos...</p>; // Manejo de caso cuando los productos no están listos
+  }
 
   return (
     <div className={styles.productosContainer}>
       <h2>PRODUCTOS DESTACADOS</h2>
-      <div className={styles.carousel}>
-        <button className={styles.arrow} onClick={handlePrev}>←</button>
-        <div className={styles.productos}>
-          {productos.slice(currentIndex, currentIndex + 4).map((producto, index) => (
-            <div key={index} className={styles.producto}>
-              <Image 
-                src={producto.imagen}
-                alt={producto.nombre}
-                width={150}
-                height={150}
-              />
-              <h3>{producto.nombre}</h3>
-            </div>
-          ))}
+
+      {/* Proveedor del Carrusel */}
+      <CarouselProvider
+        naturalSlideWidth={100}
+        naturalSlideHeight={125}
+        totalSlides={productos.length}
+        visibleSlides={4} // Mostrar 4 productos a la vez
+        infinite={true} // Carrusel infinito
+        className={styles.carousel}
+      >
+        <div className={styles.carouselWrapper}>
+          {/* Botón de retroceso */}
+          <ButtonBack className={styles.carouselButtonBack}>←</ButtonBack>
+
+          {/* Carrusel */}
+          <Slider className={styles.slider}>
+            {productos.map((producto, index) => (
+              <Slide index={index} key={producto.id} className={styles.slide}>
+                <div className={styles.producto}>
+                  <Image
+                    src={producto.imagen}
+                    alt={producto.nombre}
+                    width={150}
+                    height={150}
+                  />
+                  <h3>{producto.nombre}</h3>
+                </div>
+              </Slide>
+            ))}
+          </Slider>
+
+          {/* Botón de avance */}
+          <ButtonNext className={styles.carouselButtonNext}>→</ButtonNext>
         </div>
-        <button className={styles.arrow} onClick={handleNext}>→</button>
-      </div>
+      </CarouselProvider>
     </div>
   );
 }

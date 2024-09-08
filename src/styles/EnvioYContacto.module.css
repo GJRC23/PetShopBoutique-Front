@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.infoEnvio, .formularioContacto {
+  flex: 1;
+  margin: 0 20px;
+  padding: 20px;
+  font-family: 'Instrument Serif', serif;
+  color: #8B4513;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.infoEnvio h2{
+  color: #8B4513;
+  font-family: 'Instrument Serif', serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.formularioContacto h2 {
+  color: #8B4513;
+  font-family: 'Instrument Serif', serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.formularioContacto ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.formularioContacto li {
+  margin-bottom: 10px;
+  font-family: 'Inria Serif', serif;
+  font-size: 1rem;
+  color: #333;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+  color: #8B4513;
+}
+
+.formGroup label {
+  display: block;
+  font-family: 'Inria Serif', serif;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formGroup textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submitButton {
+  background-color: #8B4513;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #6a2e0a;
+}

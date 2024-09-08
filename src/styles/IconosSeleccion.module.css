@@ -2,7 +2,14 @@
   display: flex;
   justify-content: space-around;
   padding: 20px 0;
-  background-color: #fff; /* Fondo blanco */
+  background-color: white;
+  position: relative;
+  background-image: url('/images/fondoPatitas.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 275px;
+  
 }
 
 .icono {
@@ -11,7 +18,7 @@
 
 .icono h3 {
   font-family: 'Instrument Serif', serif;
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: #8B4513; /* Marrón similar al que usaste */
   margin-top: 10px;
 }

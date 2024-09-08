@@ -1,0 +1,33 @@
+.infoContainer {
+  display: flex;
+  justify-content: space-around; /* Asegura que los items tengan el mismo espacio entre ellos */
+  align-items: center;
+  padding: 50px;
+  background-color: #fff; /* Fondo blanco */
+  text-align: center;
+}
+
+.infoItem {
+  flex: 1; /* Hace que cada ítem ocupe el mismo ancho */
+  margin: 0 15px;
+}
+
+.icon {
+  font-size: 5rem;
+  color: #8B4513; /* Color de los íconos */
+  margin-bottom: 15px;
+}
+
+.infoItem h3 {
+  font-family: 'Instrument Serif', serif;
+  color: #8B4513;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.infoItem p {
+  font-family: 'Inria Serif', serif;
+  color: #8B4513;
+  font-size: 1rem;
+  margin-top: 0;
+}

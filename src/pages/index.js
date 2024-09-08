@@ -1,18 +1,8 @@
-import Footer from '../components/Footer';
-import IconosSeleccion from '@/components/IconosSeleccion';
-import ProductosDestacados from '../components/ProductosDestacados';
-import Header from '../components/Header';
+import Home from './Home';
 
 
-export default function Home() {
+export default function App() {
   return (
-    <div>
-      <Header />
-      <main>
-        <IconosSeleccion />
-        <ProductosDestacados />
-      </main>
-      <Footer />
-    </div>
+      <Home />
   );
 }

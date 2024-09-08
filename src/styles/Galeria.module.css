@@ -1,0 +1,19 @@
+.galeriaContainer {
+  display: flex;
+  justify-content: space-between; /* Espacio uniforme entre las imágenes */
+  align-items: center;
+  padding: 50px;
+  background-color: #8B4513;
+}
+
+.imagen {
+  flex: 1; /* Hace que cada imagen ocupe un espacio igual */
+  margin: 0 10px; /* Añade un margen entre las imágenes */
+  display: flex;
+  justify-content: center;
+}
+
+.imagen img {
+  border-radius: 10px; /* Bordes redondeados opcional */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+}

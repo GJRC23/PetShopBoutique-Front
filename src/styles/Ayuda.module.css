@@ -1,0 +1,49 @@
+.ayudaContainer {
+  display: flex;
+  justify-content: space-around; /* Espacio entre la imagen y los menús */
+  align-items: center;
+  padding: 40px;
+  background-color: #8B4513;; /* Fondo blanco */
+  text-align: center;
+}
+
+.logo {
+  flex: 1; /* Asegura que la imagen ocupe el espacio necesario */
+}
+
+.menuContainer {
+  display: flex;
+  justify-content: space-around;
+  flex: 2; /* El contenedor de menús ocupa el doble que la imagen */
+}
+
+.menu {
+  margin: 0 20px; /* Margen entre los menús */
+}
+
+.menu h2 {
+  font-family: 'Instrument Serif', serif;
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.menu ul li {
+  font-family: 'Inria Serif', serif;
+  color: #8B4513;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.menu ul li:hover {
+  color: #ffd5b5; /* Cambiar color al pasar el mouse por las opciones */
+}
