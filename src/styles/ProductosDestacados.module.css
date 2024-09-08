@@ -1,0 +1,50 @@
+.productosContainer {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 40px 0;
+}
+
+.productosContainer h2 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productos {
+  display: flex;
+  gap: 20px; /* Espacio entre los productos */
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.producto h3 {
+  font-family: 'Inria Serif', serif;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.arrow {
+  background-color: red;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.arrow:hover {
+  color: #8B4513;
+}

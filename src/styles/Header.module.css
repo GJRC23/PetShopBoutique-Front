@@ -1,0 +1,58 @@
+/* Estilos para el top header */
+.topHeader {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+/* Estilos para el NavBar */
+.navBar {
+  display: flex;  
+  color: white;
+}
+
+.navBar ul {
+  background-color: #8B4513;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 15px;
+  padding-top: 20px;
+  border-radius: 25px;
+}
+
+.navBar ul li {
+  font-size: 20px;
+}
+
+.navBar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.navBar ul li a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilos para el Banner */
+.banner {
+  position: relative;
+  background-image: url('/images/banner-dogs.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 450px; /* Ajusta la altura según sea necesario */
+  display: flex;
+  flex-direction: column;
+  text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.banner h1 {
+  color: white;
+  font-size: 4rem;
+  margin: 0; /* Elimina márgenes para evitar desalineaciones */
+}

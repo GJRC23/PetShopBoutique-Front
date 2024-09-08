@@ -1,0 +1,17 @@
+.iconosContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  background-color: #fff; /* Fondo blanco */
+}
+
+.icono {
+  text-align: center;
+}
+
+.icono h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.2rem;
+  color: #8B4513; /* Marrón similar al que usaste */
+  margin-top: 10px;
+}

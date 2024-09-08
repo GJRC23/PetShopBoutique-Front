@@ -1,0 +1,15 @@
+.footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footerText {
+  margin: 0;
+}
