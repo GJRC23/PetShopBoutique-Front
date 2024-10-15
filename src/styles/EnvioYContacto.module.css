@@ -9,6 +9,7 @@
   margin: 0 20px;
   padding: 20px;
   font-family: 'Instrument Serif', serif;
+  font-size: 1.5rem;
   color: #8B4513;
   background-color: white;
   border-radius: 10px;
@@ -49,7 +50,7 @@
 .formGroup label {
   display: block;
   font-family: 'Inria Serif', serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom: 5px;
 }
 
