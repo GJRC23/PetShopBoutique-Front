@@ -47,13 +47,14 @@
 
 .producto img {
   object-fit: contain; /* Ajusta la imagen dentro del contenedor */
-  height: 400px; /* Mantener una altura consistente para todas las imágenes */
+  height: 300px; /* Mantener una altura consistente para todas las imágenes */
   width: auto; /* Asegurar que las imágenes mantengan sus proporciones */
 }
 
 /* Botones de navegación: Back y Next */
 .carouselButtonBack, .carouselButtonNext {
   position: absolute;
+  color: white;
   top: 50%; /* Colocamos los botones en el centro verticalmente */
   transform: translateY(-50%);
   background-color: #8B4513; /* Fondo semi-transparente */
@@ -63,7 +64,7 @@
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.2s ease-in-out;
-  z-index: 1; /* Asegura que los botones estén sobre las imágenes */
+  z-index: 1;
 }
 
 .carouselButtonBack:hover, .carouselButtonNext:hover {

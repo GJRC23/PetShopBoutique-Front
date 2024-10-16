@@ -67,3 +67,11 @@ select:hover {
   cursor: pointer;
 }
 
+.banner {
+  width: 50%;
+  color: white;
+  font-size: 4rem;
+  background-color:#8B4513;
+  margin-top: 2%;
+}
+

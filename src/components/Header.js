@@ -23,9 +23,9 @@ function Header() {
           <ul className="inria-serif-regular">
             <li><Link href="/alimentos">ALIMENTOS</Link></li>
             <li><Link href="/accesorios">ACCESORIOS</Link></li>
+            <li><Link href="/aseo">ASEO</Link></li>
             <li><Link href="/indumentaria">INDUMENTARIA</Link></li>
             <li><Link href="/juguetes">JUGUETES</Link></li>
-            <li><Link href="/contacto">ZONAS DE ENVÍO</Link></li>
             <li><Link href="/contacto">CONTACTO</Link></li>
           </ul>
         </nav>

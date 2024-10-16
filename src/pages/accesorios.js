@@ -4,9 +4,9 @@ import axios from "axios";
 import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import styles from "../styles/Alimentos.module.css";
+import styles from "../styles/Accesorios.module.css"; // Asegúrate de crear este archivo CSS
 
-const Alimentos = () => {
+const Accesorios = () => {
   const router = useRouter();
   const { id } = router.query;
   const [productos, setProductos] = useState([]);
@@ -17,8 +17,10 @@ const Alimentos = () => {
     sortBy: "",
     sortOrder: "asc",
   });
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    fetchAccesorios();
+  }, [filters]);
 
   useEffect(() => {
     if (id) {
@@ -32,15 +34,11 @@ const Alimentos = () => {
     }
   }, [id, productos]);
 
-  useEffect(() => {
-    fetchAlimentos();
-  }, [filters]);
-
-  const fetchAlimentos = async () => {
+  const fetchAccesorios = async () => {
     try {
       const response = await axios.get("http://localhost:5000/api/products", {
         params: {
-          category: "Alimento",
+          category: "Accesorio",
           name: filters.name || null,
           animalType: filters.animalType || null,
           sortBy: filters.sortBy || null,
@@ -75,32 +73,33 @@ const Alimentos = () => {
     }).format(value);
   };
 
-  if (loading) {
-    return <p>Cargando productos...</p>;
-  }
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const handleProductClick = (producto) => {
-    setSelectedProduct(producto);
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
     setShowModal(true);
   };
 
   const closeModal = () => {
-    setSelectedProduct(null);
     setShowModal(false);
+    setSelectedProduct(null);
   };
+
+  if (loading) {
+    return <p>Cargando productos...</p>;
+  }
 
   return (
     <div>
       <Header />
-      {/* TITLE ALIMENTOS */}
       <div className="text-center my-8">
-        <h3 className={`${styles.AlimentosTitle} text-xl font-bold`}>
-          ALIMENTOS
+        <h3 className={`${styles.AccesoriosTitle} text-xl font-bold mb-4`}>
+          ACCESORIOS
         </h3>
       </div>
 
       <div className="flex p-4">
-        {/* Filtros - 1/4 de la página */}
         <div
           className="w-1/4 bg-gray-100 p-4 rounded-lg mr-4 h-fit"
           style={{ backgroundColor: "#8B4513" }}
@@ -156,7 +155,6 @@ const Alimentos = () => {
           </button>
         </div>
 
-        {/* Productos - 3/4 de la página */}
         <div className="w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {productos.map((producto) => (
             <div
@@ -173,52 +171,51 @@ const Alimentos = () => {
                   className="rounded"
                 />
               </div>
-              <p className="text-xl">
-                Alimento Balanceado {producto.animalType}
-              </p>
+              <p className="text-xl">Accesorio {producto.animalType}</p>
               <h3 className="font-semibold">{producto.name}</h3>
               <p className="text-xl">{formatCurrency(producto.price)}</p>
             </div>
           ))}
         </div>
-
-        {showModal && selectedProduct && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
-            onClick={closeModal} // Cierra el modal al hacer clic en cualquier parte del fondo
-          >
-            <div
-              className="bg-white p-4 rounded-lg shadow-lg max-w-lg w-full flex flex-col items-center text-center"
-              onClick={(e) => e.stopPropagation()} // Evita que el clic dentro del modal cierre el modal
-            >
-              <h3 className="font-bold mb-4">{selectedProduct.name}</h3>
-              <Image
-                src={selectedProduct.imageUrl}
-                alt={selectedProduct.name}
-                width={300}
-                height={300}
-                className="rounded mb-4"
-              />
-              <p className="mb-2 text-xl">
-                Alimento Balanceado {selectedProduct.animalType}
-              </p>
-              <p className="mb-2 text-xl">{selectedProduct.description}</p>
-              <p className="mb-4 text-xl">
-                Precio: {formatCurrency(selectedProduct.price)}
-              </p>
-              <button
-                onClick={closeModal}
-                className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-              >
-                Cerrar
-              </button>
-            </div>
-          </div>
-        )}
       </div>
+
+      {showModal && selectedProduct && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-white p-4 rounded-lg shadow-lg max-w-lg w-full flex flex-col items-center text-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 className="font-bold mb-4">{selectedProduct.name}</h3>
+            <Image
+              src={selectedProduct.imageUrl}
+              alt={selectedProduct.name}
+              width={300}
+              height={300}
+              className="rounded mb-4"
+            />
+            <p className="mb-2 text-xl">
+              Accesorio para {selectedProduct.animalType}
+            </p>
+            <p className="mb-2 text-xl">{selectedProduct.description}</p>
+            <p className="mb-4 text-xl">
+              Precio: {formatCurrency(selectedProduct.price)}
+            </p>
+            <button
+              onClick={closeModal}
+              className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
+
       <Footer />
     </div>
   );
 };
 
-export default Alimentos;
+export default Accesorios;
