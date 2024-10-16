@@ -11,7 +11,7 @@ function Header() {
   
       {/* Top Header */}
       <div className={styles.topHeader}>
-        <p>Mar del Plata – Falucho 2482</p>
+        <p className='text-white'>Mar del Plata – Falucho 2482</p>
         <a href="https://www.instagram.com/petshopboutique__/" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faInstagram} className="h-6 w-6 text-pink-500" />
         </a>

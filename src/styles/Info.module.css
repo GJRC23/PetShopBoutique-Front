@@ -1,9 +1,9 @@
 .infoContainer {
   display: flex;
-  justify-content: space-around; /* Asegura que los items tengan el mismo espacio entre ellos */
+  justify-content: space-around;
   align-items: center;
   padding: 50px;
-  background-color: #fff; /* Fondo blanco */
+  background-color: #fff;
   text-align: center;
 }
 

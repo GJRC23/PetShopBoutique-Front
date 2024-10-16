@@ -6,7 +6,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <p className={styles.footerText}>Pet Shop Boutique 2024</p>
+      <p className={`${styles.infoProducto} text-white`}>Pet Shop Boutique 2024</p>
       <a href="https://www.instagram.com/petshopboutique__/" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faInstagram} className="h-6 w-6 text-pink-500" />
       </a>

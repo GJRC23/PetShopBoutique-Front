@@ -51,3 +51,19 @@ body {
   font-style: normal;
 }
 
+button, input, select, p {
+  font-family: "Inria Serif", serif;
+  color: #8b4513;
+  font-size: 1rem;
+}
+
+h3 {
+  font-family: 'Instrument Serif', serif;
+  color: #8B4513;
+  font-size: 2rem;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
