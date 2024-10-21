@@ -3,7 +3,7 @@ import styles from '../styles/Header.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
-import logo from "/public/images/logo_boutique.png";
+import logo from "/public/images/LogoPetshopBoutiqueHD.jpeg";
 
 function Header() {
   return (
@@ -19,7 +19,7 @@ function Header() {
 
       <div className={styles.banner}>
         <nav className={styles.navBar}>
-        <Link href="/Home"><Image src={logo} alt="Logo Boutique" width={100} height={100} /></Link>
+        <Link href="/Home"><Image src={logo} alt="Logo Boutique" width={120} height={120} className='rounded'/></Link>
           <ul className="inria-serif-regular">
             <li><Link href="/alimentos">ALIMENTOS</Link></li>
             <li><Link href="/accesorios">ACCESORIOS</Link></li>

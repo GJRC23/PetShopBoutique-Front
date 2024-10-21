@@ -8,8 +8,9 @@ function Ayuda() {
       {/* Imagen del logo */}
       <div className={styles.logo}>
         <Image 
-          src="/images/logo_boutique.png" 
-          alt="Logo Boutique" 
+          src="/images/LogoPetshopBoutiqueHD.jpeg" 
+          alt="Logo Boutique"
+          className='rounded'
           width={300} 
           height={200} 
         />
@@ -30,9 +31,9 @@ function Ayuda() {
         <div className={styles.menu}>
           <h2>AYUDA</h2>
           <ul>
-            <li>MEDIOS DE PAGO</li>
-            <li>PREGUNTAS FRECUENTES</li>
-            <li>TÉRMINOS Y CONDICIONES</li>
+            <li><Link href="/pagosFaqTnC">MEDIOS DE PAGO</Link></li>
+            <li><Link href="/pagosFaqTnC">PREGUNTAS FRECUENTES</Link></li>
+            <li><Link href="/pagosFaqTnC">TÉRMINOS Y CONDICIONES</Link></li>
             <li><Link href="/contacto">ZONAS DE ENVÍO</Link></li>
             <li><Link href="/contacto">CONTACTO</Link></li>
           </ul>

@@ -21,7 +21,7 @@ function ProductosDestacados() {
     const fetchProductos = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/products?isFeatured=true"
+          "https://backpetshopboutique.onrender.com/api/products?isFeatured=true"
         );
         if (!response.ok) {
           throw new Error("Error al cargar los productos");
@@ -62,14 +62,6 @@ function ProductosDestacados() {
     router.push(`${route}?id=${product._id}`);
   };
 
-  if (loading) {
-    return <p>Cargando productos...</p>;
-  }
-
-  if (productos.length === 0) {
-    return <p>No hay productos destacados en este momento.</p>;
-  }
-
   const formatCurrency = (value) => {
     return new Intl.NumberFormat("es-AR", {
       style: "currency",
@@ -94,7 +86,10 @@ function ProductosDestacados() {
           <Slider className={styles.slider}>
             {productos.map((producto, index) => (
               <Slide index={index} key={producto._id} className="p-6">
-                <div onClick={() => handleProductClick(producto)} className="bg-white p-4 rounded-lg shadow-md max-w-xs cursor-pointer transition-shadow duration-300 hover:shadow-2xl">
+                <div
+                  onClick={() => handleProductClick(producto)}
+                  className="bg-white p-4 rounded-lg shadow-md max-w-xs cursor-pointer transition-shadow duration-300 hover:shadow-2xl"
+                >
                   <div className="relative w-full h-64 mb-4">
                     <Image
                       src={producto.imageUrl}

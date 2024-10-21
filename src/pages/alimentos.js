@@ -5,6 +5,8 @@ import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "../styles/Alimentos.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Alimentos = () => {
   const router = useRouter();
@@ -34,19 +36,23 @@ const Alimentos = () => {
 
   useEffect(() => {
     fetchAlimentos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]);
 
   const fetchAlimentos = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/products", {
-        params: {
-          category: "Alimento",
-          name: filters.name || null,
-          animalType: filters.animalType || null,
-          sortBy: filters.sortBy || null,
-          sortOrder: filters.sortOrder,
-        },
-      });
+      const response = await axios.get(
+        "https://backpetshopboutique.onrender.com/api/products",
+        {
+          params: {
+            category: "Alimento",
+            name: filters.name || null,
+            animalType: filters.animalType || null,
+            sortBy: filters.sortBy || null,
+            sortOrder: filters.sortOrder,
+          },
+        }
+      );
       setProductos(response.data);
     } catch (error) {
       console.error("Error al cargar los productos:", error);
@@ -74,10 +80,6 @@ const Alimentos = () => {
       currency: "ARS",
     }).format(value);
   };
-
-  if (loading) {
-    return <p>Cargando productos...</p>;
-  }
 
   const handleProductClick = (producto) => {
     setSelectedProduct(producto);
@@ -148,12 +150,16 @@ const Alimentos = () => {
             <option value="asc">Ascendente</option>
             <option value="desc">Descendente</option>
           </select>
-          <button
-            onClick={resetFilters}
-            className="text-black p-2 bg-gray-300 mb-3 rounded-lg w-full hover:bg-gray-200"
-          >
-            RESET
-          </button>
+
+          {/* Centrar el botón de reinicio */}
+          <div className="flex justify-center">
+            <button
+              onClick={resetFilters}
+              className="flex justify-center items-center p-3 rounded-full text-white text-3xl bg-transparent hover:bg-white hover:text-black transition"
+            >
+              <FontAwesomeIcon icon={faSyncAlt} />
+            </button>
+          </div>
         </div>
 
         {/* Productos - 3/4 de la página */}
