@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import styles from "../styles/Accesorios.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const Accesorios = () => {
   const router = useRouter();
@@ -39,15 +40,18 @@ const Accesorios = () => {
 
   const fetchAccesorios = async () => {
     try {
-      const response = await axios.get("https://backpetshopboutique.onrender.com/api/products", {
-        params: {
-          category: "Accesorio",
-          name: filters.name || null,
-          animalType: filters.animalType || null,
-          sortBy: filters.sortBy || null,
-          sortOrder: filters.sortOrder,
-        },
-      });
+      const response = await axios.get(
+        "https://backpetshopboutique.onrender.com/api/products",
+        {
+          params: {
+            category: "Accesorio",
+            name: filters.name || null,
+            animalType: filters.animalType || null,
+            sortBy: filters.sortBy || null,
+            sortOrder: filters.sortOrder,
+          },
+        }
+      );
       setProductos(response.data);
     } catch (error) {
       console.error("Error al cargar los productos:", error);
@@ -254,6 +258,7 @@ const Accesorios = () => {
         </div>
       )}
 
+      <WhatsAppButton />
       <Footer />
     </div>
   );

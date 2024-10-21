@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import styles from "../styles/Alimentos.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const Alimentos = () => {
   const router = useRouter();
@@ -222,6 +223,8 @@ const Alimentos = () => {
           </div>
         )}
       </div>
+
+      <WhatsAppButton />
       <Footer />
     </div>
   );

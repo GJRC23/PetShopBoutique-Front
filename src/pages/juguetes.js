@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import styles from "../styles/Juguetes.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const Juguetes = () => {
   const router = useRouter();
@@ -257,6 +258,7 @@ const Juguetes = () => {
         </div>
       )}
 
+      <WhatsAppButton />
       <Footer />
     </div>
   );

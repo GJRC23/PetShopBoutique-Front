@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import styles from "../styles/Indumentaria.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const Indumentaria = () => {
   const router = useRouter();
@@ -39,15 +40,18 @@ const Indumentaria = () => {
 
   const fetchIndumentaria = async () => {
     try {
-      const response = await axios.get("https://backpetshopboutique.onrender.com/api/products", {
-        params: {
-          category: "Indumentaria",
-          name: filters.name || null,
-          animalType: filters.animalType || null,
-          sortBy: filters.sortBy || null,
-          sortOrder: filters.sortOrder,
-        },
-      });
+      const response = await axios.get(
+        "https://backpetshopboutique.onrender.com/api/products",
+        {
+          params: {
+            category: "Indumentaria",
+            name: filters.name || null,
+            animalType: filters.animalType || null,
+            sortBy: filters.sortBy || null,
+            sortOrder: filters.sortOrder,
+          },
+        }
+      );
       setProductos(response.data);
     } catch (error) {
       console.error("Error al cargar los productos:", error);
@@ -254,6 +258,7 @@ const Indumentaria = () => {
         </div>
       )}
 
+      <WhatsAppButton />
       <Footer />
     </div>
   );

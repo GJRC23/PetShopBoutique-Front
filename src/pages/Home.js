@@ -5,6 +5,7 @@ import Galeria from '../components/Galeria';
 import Info from '../components/Info';
 import Ayuda from '../components/Ayuda';
 import Header from '../components/Header';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <Ayuda />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

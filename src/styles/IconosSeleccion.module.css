@@ -13,7 +13,17 @@
 }
 
 .icono {
+  display: inline-block;
   text-align: center;
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.icono img {
+  transition: transform 0.3s ease; /* Transición para la imagen */
+}
+
+.icono:hover img {
+  transform: scale(1.1); /* Aumenta el tamaño al hacer hover */
 }
 
 .icono h3 {

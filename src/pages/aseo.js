@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import styles from "../styles/Aseo.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const Aseo = () => {
   const router = useRouter();
@@ -255,6 +256,7 @@ const Aseo = () => {
         </div>
       )}
 
+      <WhatsAppButton />
       <Footer />
     </div>
   );
