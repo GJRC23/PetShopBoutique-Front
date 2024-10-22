@@ -10,7 +10,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 
 export default function Home() {
   return (
-    <div>
+    <div className="max-w-full mx-auto overflow-hidden">
       <Header />
       <main>
         <IconosSeleccion />
