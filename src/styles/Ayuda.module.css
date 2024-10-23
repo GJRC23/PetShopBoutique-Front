@@ -1,31 +1,24 @@
 .ayudaContainer {
   display: flex;
-  justify-content: space-around; /* Espacio entre la imagen y los menús */
+  flex-direction: column; /* Apila los elementos en pantallas pequeñas */
   align-items: center;
-  padding: 40px;
-  background-color: #8B4513;; /* Fondo blanco */
+  justify-content: center;
+  padding: 20px;
+  background-color: #8b4513;
   text-align: center;
+  gap: 20px;
 }
 
-.logo {
-  flex: 1; /* Asegura que la imagen ocupe el espacio necesario */
-}
-
-.menuContainer {
-  display: flex;
-  justify-content: space-around;
-  flex: 2; /* El contenedor de menús ocupa el doble que la imagen */
-}
-
-.menu {
-  margin: 0 20px; /* Margen entre los menús */
+.logo, .menu {
+  width: 100%;
+  max-width: 300px;
 }
 
 .menu h2 {
   font-family: 'Instrument Serif', serif;
   color: white;
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .menu ul {
@@ -38,12 +31,32 @@
 
 .menu ul li {
   font-family: 'Inria Serif', serif;
-  color: #8B4513;
-  font-size: 1.5rem;
+  color: #8b4513;
+  font-size: 1.2rem;
   margin: 10px 0;
-  cursor: pointer;
 }
 
 .menu ul li:hover {
-  color: #ffd5b5; /* Cambiar color al pasar el mouse por las opciones */
+  color: #ffd5b5;
+}
+
+/* Estilos para pantallas más grandes */
+@media (min-width: 1024px) {
+  .ayudaContainer {
+    flex-direction: row; /* Alinea los elementos en una fila en pantallas grandes */
+    gap: 50px; /* Espacio entre los elementos en pantallas grandes */
+    padding: 40px;
+  }
+
+  .logo, .menu {
+    max-width: 33%; /* Ocupa un tercio de la pantalla */
+  }
+
+  .menu h2 {
+    font-size: 3rem;
+  }
+
+  .menu ul li {
+    font-size: 1.5rem;
+  }
 }

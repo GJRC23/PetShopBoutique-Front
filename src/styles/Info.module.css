@@ -1,33 +1,58 @@
 .infoContainer {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; /* Cambia a columna en pantallas pequeñas */
   align-items: center;
-  padding: 50px;
+  padding: 20px;
   background-color: #fff;
   text-align: center;
 }
 
 .infoItem {
-  flex: 1; /* Hace que cada ítem ocupe el mismo ancho */
-  margin: 0 15px;
+  margin: 20px 0; /* Espacio entre los ítems en pantallas pequeñas */
 }
 
 .icon {
-  font-size: 5rem;
-  color: #8B4513; /* Color de los íconos */
-  margin-bottom: 15px;
+  font-size: 3rem; /* Tamaño más pequeño para móviles */
+  color: #8B4513;
+  margin-bottom: 10px;
 }
 
 .infoItem h3 {
   font-family: 'Instrument Serif', serif;
   color: #8B4513;
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 1.5rem; /* Ajuste de tamaño para móviles */
+  margin-bottom: 8px;
 }
 
 .infoItem p {
   font-family: 'Inria Serif', serif;
   color: #8B4513;
-  font-size: 1rem;
+  font-size: 0.9rem; /* Ajuste de tamaño para móviles */
   margin-top: 0;
+}
+
+/* Estilos para pantallas más grandes */
+@media (min-width: 768px) {
+  .infoContainer {
+    flex-direction: row; /* Cambia a fila en pantallas más grandes */
+    justify-content: space-around;
+    padding: 50px;
+  }
+
+  .infoItem {
+    flex: 1;
+    margin: 0 15px;
+  }
+
+  .icon {
+    font-size: 5rem; /* Restaurar tamaño de íconos para pantallas grandes */
+  }
+
+  .infoItem h3 {
+    font-size: 2rem; /* Restaurar tamaño de títulos para pantallas grandes */
+  }
+
+  .infoItem p {
+    font-size: 1rem; /* Restaurar tamaño de texto para pantallas grandes */
+  }
 }

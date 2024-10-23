@@ -1,24 +1,27 @@
 .iconosContainer {
   display: flex;
   justify-content: space-around;
-  padding: 20px 0;
   background-color: white;
   position: relative;
-  background-image: url('/images/fondoPatitas.png');
+  background-image: url('https://res.cloudinary.com/dos14xhdl/image/upload/v1729617493/fondoPatitas_p0dwfk.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 275px;
-  
+  height: auto;
 }
 
 .icono {
   display: inline-block;
   text-align: center;
-  transition: transform 0.3s ease; /* Transición suave */
+  margin: 5px;
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 200px;
 }
 
 .icono img {
+  width: 100%;
+  height: auto;
   transition: transform 0.3s ease; /* Transición para la imagen */
 }
 
@@ -31,4 +34,15 @@
   font-size: 2rem;
   color: #8B4513; /* Marrón similar al que usaste */
   margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .iconosContainer {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .icono h3 {
+    font-size: 1.2rem; /* Ajusta el tamaño de fuente en pantallas pequeñas */
+  }
 }

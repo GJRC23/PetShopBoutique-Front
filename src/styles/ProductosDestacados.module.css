@@ -6,10 +6,10 @@
 }
 
 .productosContainer h2 {
-  background-color: #8B4513;
-  font-family: 'Instrument Serif', serif;
+  background-color: #8b4513;
+  font-family: "Instrument Serif", serif;
   font-size: 3rem;
-  margin: 20px 0px;
+  margin: 50px 0px;
 }
 
 .carousel {
@@ -17,7 +17,7 @@
   position: relative;
 }
 
-.slider{
+.slider {
   margin: auto;
   width: 90%;
 }
@@ -39,25 +39,32 @@
 }
 
 .producto h3 {
-  color: #8B4513;
-  font-family: 'Inria Serif', serif;
+  color: #8b4513;
+  font-family: "Inria Serif", serif;
   font-size: 1.2rem;
   margin-top: 10px;
 }
 
 .producto img {
-  object-fit: contain; /* Ajusta la imagen dentro del contenedor */
-  height: 300px; /* Mantener una altura consistente para todas las imágenes */
-  width: auto; /* Asegurar que las imágenes mantengan sus proporciones */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.relative {
+  position: relative;
+  width: 100%;
+  height: 200px;
 }
 
 /* Botones de navegación: Back y Next */
-.carouselButtonBack, .carouselButtonNext {
+.carouselButtonBack,
+.carouselButtonNext {
   position: absolute;
   color: white;
   top: 50%; /* Colocamos los botones en el centro verticalmente */
   transform: translateY(-50%);
-  background-color: #8B4513; /* Fondo semi-transparente */
+  background-color: #8b4513; /* Fondo semi-transparente */
   border: none;
   font-size: 2rem;
   padding: 0px 10px;
@@ -67,9 +74,15 @@
   z-index: 1;
 }
 
-.carouselButtonBack:hover, .carouselButtonNext:hover {
-  background-color: rgba(255, 255, 255, 0.8); /* Cambiar color de fondo en hover */
-  color: #8B4513; /* Cambiar color de la flecha en hover */
+.carouselButtonBack:hover,
+.carouselButtonNext:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Cambiar color de fondo en hover */
+  color: #8b4513; /* Cambiar color de la flecha en hover */
 }
 
 .carouselButtonBack {
@@ -78,4 +91,85 @@
 
 .carouselButtonNext {
   right: 20px; /* Botón derecho, dentro del carrusel */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .relative {
+    height: 150px; /* Ajustar la altura para pantallas pequeñas */
+  }
+
+  .productosContainer {
+    padding: 20px 0;
+  }
+
+  .productosContainer h2 {
+    font-size: 2rem; /* Ajuste del tamaño de fuente del título */
+    margin: 10px 0px;
+  }
+
+  .carousel {
+    width: 100%;
+  }
+
+  .slider {
+    width: 100%;
+  }
+
+  .producto {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .producto img {
+    height: auto; /* Ajustar la altura automáticamente */
+    object-fit: contain; /* Ajuste de la altura de las imágenes */
+  }
+
+  .carouselButtonBack,
+  .carouselButtonNext {
+    font-size: 1.5rem; /* Ajuste del tamaño de los botones */
+    padding: 5px;
+  }
+
+  .carouselButtonBack {
+    left: 5px; /* Ajuste de la posición del botón */
+  }
+
+  .carouselButtonNext {
+    right: 5px; /* Ajuste de la posición del botón */
+  }
+}
+
+/* Estilos para pantallas muy pequeñas (por ejemplo, 480px o menos) */
+@media (max-width: 480px) {
+  .relative {
+    height: 120px; /* Ajuste adicional para pantallas más pequeñas */
+  }
+
+  .productosContainer h2 {
+    font-size: 1.5rem; /* Reducción adicional del tamaño del título */
+  }
+
+  .producto h3 {
+    font-size: 1rem; /* Ajuste del tamaño del texto del nombre del producto */
+  }
+
+  .producto p {
+    font-size: 0.9rem; /* Ajuste del tamaño del precio */
+  }
+
+  .producto {
+    padding: 5px;
+    width: 100%;
+  }
+
+  .producto img {
+    height: auto; /* Ajuste adicional para pantallas más pequeñas */
+  }
+
+  .carouselButtonBack, .carouselButtonNext {
+    font-size: 1rem;
+  }
 }

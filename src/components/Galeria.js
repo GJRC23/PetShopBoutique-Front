@@ -6,7 +6,7 @@ function Galeria() {
     <div className={styles.galeriaContainer}>
       <div className={styles.imagen}>
         <Image 
-          src="/images/galeria1.png" 
+          src="https://res.cloudinary.com/dos14xhdl/image/upload/v1729617494/galeria1_fyp6yv.png" 
           alt="Imagen 1" 
           width={400} 
           height={300} 
@@ -14,7 +14,7 @@ function Galeria() {
       </div>
       <div className={styles.imagen}>
         <Image 
-          src="/images/galeria2.png" 
+          src="https://res.cloudinary.com/dos14xhdl/image/upload/v1729617494/galeria2_v0uc43.png" 
           alt="Imagen 2" 
           width={400} 
           height={300} 
@@ -22,7 +22,7 @@ function Galeria() {
       </div>
       <div className={styles.imagen}>
         <Image 
-          src="/images/galeria3.png" 
+          src="https://res.cloudinary.com/dos14xhdl/image/upload/v1729617495/galeria3_jdosig.png" 
           alt="Imagen 3" 
           width={400} 
           height={300} 
@@ -30,7 +30,7 @@ function Galeria() {
       </div>
       <div className={styles.imagen}>
         <Image 
-          src="/images/galeria4.png" 
+          src="https://res.cloudinary.com/dos14xhdl/image/upload/v1729617494/galeria4_flxv27.png" 
           alt="Imagen 4" 
           width={400} 
           height={300} 

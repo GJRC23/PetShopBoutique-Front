@@ -2,8 +2,6 @@ import Link from "next/link";
 import styles from "../styles/Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import Image from "next/image";
-import logo from "/public/images/LogoPetshopBoutiqueHD.jpeg";
 
 function Header() {
   return (

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import axios from "axios";
 import Image from "next/image";
 import {
   CarouselProvider,
@@ -9,12 +8,13 @@ import {
   ButtonBack,
   ButtonNext,
 } from "pure-react-carousel";
-import "pure-react-carousel/dist/react-carousel.es.css"; // Importamos los estilos del carrusel
-import styles from "../styles/ProductosDestacados.module.css"; // Asegúrate de tener el archivo CSS
+import "pure-react-carousel/dist/react-carousel.es.css";
+import styles from "../styles/ProductosDestacados.module.css";
 
 function ProductosDestacados() {
   const [productos, setProductos] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [visibleSlides, setVisibleSlides] = useState(4);
+  const [slideHeight, setSlideHeight] = useState(105); 
   const router = useRouter();
 
   useEffect(() => {
@@ -30,15 +30,31 @@ function ProductosDestacados() {
         setProductos(data);
       } catch (error) {
         console.error(error);
-      } finally {
-        setLoading(false);
       }
     };
+
+    // Ajustar el número de diapositivas visibles según el ancho de la pantalla
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setVisibleSlides(2);
+        setSlideHeight(125);
+      } else {
+        setVisibleSlides(4);
+        setSlideHeight(105);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Llama a la función al cargar el componente
+
     fetchProductos();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const handleProductClick = (product) => {
-    // Redireccionar a la página correspondiente basada en la categoría del producto
     let route = "";
     switch (product.category) {
       case "Alimento":
@@ -71,13 +87,13 @@ function ProductosDestacados() {
 
   return (
     <div className={styles.productosContainer}>
-      <h2 className="">PRODUCTOS DESTACADOS</h2>
+      <h2>PRODUCTOS DESTACADOS</h2>
 
       <CarouselProvider
         naturalSlideWidth={100}
-        naturalSlideHeight={105}
+        naturalSlideHeight={slideHeight}
         totalSlides={productos.length}
-        visibleSlides={4}
+        visibleSlides={visibleSlides}
         infinite={true}
         className={styles.carousel}
       >
@@ -90,17 +106,21 @@ function ProductosDestacados() {
                   onClick={() => handleProductClick(producto)}
                   className="bg-white p-4 rounded-lg shadow-md max-w-xs cursor-pointer transition-shadow duration-300 hover:shadow-2xl"
                 >
-                  <div className="relative w-full h-64 mb-4">
+                  <div className="relative w-full h-48 md:h-64 mb-4">
                     <Image
                       src={producto.imageUrl}
                       alt={producto.name}
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      style={{ objectFit: "contain" }}
                       className="rounded"
                     />
                   </div>
-                  <h3 className="font-semibold text-3xl">{producto.name}</h3>
-                  <p className="text-xl">{formatCurrency(producto.price)}</p>
+                  <h3 className="font-semibold text-center text-base md:text-2xl">
+                    {producto.name}
+                  </h3>
+                  <p className="text-center md:text-3xl">
+                    {formatCurrency(producto.price)}
+                  </p>
                 </div>
               </Slide>
             ))}
