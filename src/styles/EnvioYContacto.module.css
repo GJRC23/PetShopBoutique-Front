@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
@@ -79,4 +80,36 @@
 
 .submitButton:hover {
   background-color: #6a2e0a;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Los elementos se apilan verticalmente */
+    align-items: center; /* Centrar el contenido */
+  }
+
+  .infoEnvio,
+  .formularioContacto {
+    margin: 10px 0; /* Espacio vertical entre los bloques */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 90%; /* Añade un pequeño margen lateral */
+  }
+
+  .infoEnvio h2,
+  .formularioContacto h2 {
+    font-size: 2rem; /* Ajuste del tamaño de fuente para móviles */
+  }
+
+  .formGroup label {
+    font-size: 1.2rem; /* Ajuste del tamaño de fuente para etiquetas en móviles */
+  }
+
+  .formGroup input,
+  .formGroup textarea {
+    padding: 8px; /* Reduce el padding para móviles */
+  }
+
+  .submitButton {
+    padding: 8px 16px; /* Ajusta el tamaño del botón de enviar */
+  }
 }
