@@ -10,7 +10,7 @@ function IconosSeleccion() {
           <Image
             src="https://res.cloudinary.com/dos14xhdl/image/upload/v1729617492/alimentos_uotpkb.png"
             alt="Alimentos"
-            width={190}
+            width={200}
             height={150}
           />
           <h3>ALIMENTOS</h3>
