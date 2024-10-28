@@ -99,6 +99,11 @@ function Header() {
         <div className="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center z-50">
           <ul className="flex flex-col items-center space-y-8 text-3xl text-white inria-serif-regular">
             <li>
+              <Link href="/" onClick={toggleMenu}>
+                INICIO
+              </Link>
+            </li>
+            <li>
               <Link href="/alimentos" onClick={toggleMenu}>
                 ALIMENTOS
               </Link>
