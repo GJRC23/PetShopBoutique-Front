@@ -61,16 +61,16 @@
 
 @media (max-width: 640px) {
   .banner {
-    background-image: url("https://res.cloudinary.com/dos14xhdl/image/upload/v1730134806/Background_Petshpop_Boutique_celular_us3wtu.png");
+    background-image: url("https://res.cloudinary.com/dos14xhdl/image/upload/v1730135548/Background_Petshpop_Boutique_celular_us3wtu.png");
     background-size: contain;
-    height: 300px;
-    margin-bottom: -120px;
+    height: 200px;
+    margin-bottom: -15px;
   }
 
   .banner h1 {
-    margin-top: 20px;
     font-size: 1.5rem;
     width: 50%;
+    margin-top: 15px;
   }
 
   .navBar ul {
