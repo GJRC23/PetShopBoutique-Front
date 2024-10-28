@@ -21,7 +21,7 @@ function ProductosDestacados() {
     const fetchProductos = async () => {
       try {
         const response = await fetch(
-          "https://backpetshopboutique.onrender.com/api/products?isFeatured=true"
+          "https://admin-petshop-boutique.vercel.app/api/products?isFeatured=true"
         );
         if (!response.ok) {
           throw new Error("Error al cargar los productos");

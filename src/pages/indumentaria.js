@@ -41,7 +41,7 @@ const Indumentaria = () => {
   const fetchIndumentaria = async () => {
     try {
       const response = await axios.get(
-        "https://backpetshopboutique.onrender.com/api/products",
+        "https://admin-petshop-boutique.vercel.app/api/products",
         {
           params: {
             category: "Indumentaria",
@@ -186,9 +186,9 @@ const Indumentaria = () => {
                 <Image
                   src={producto.imageUrl}
                   alt={producto.name}
-                  layout="fill"
-                  objectFit="contain"
-                  className="rounded"
+                  fill
+                  className="rounded object-contain"
+                  priority
                 />
               </div>
               <p className="text-lg md:text-xl">

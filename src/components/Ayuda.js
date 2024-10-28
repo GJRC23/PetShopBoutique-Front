@@ -12,7 +12,7 @@ function Ayuda() {
           alt="Logo Boutique"
           className="rounded"
           width={300}
-          height={200}
+          height={300}
         />
       </div>
 

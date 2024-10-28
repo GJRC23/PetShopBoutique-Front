@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import styles from "../styles/Accesorios.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
-import WhatsAppButton from '../components/WhatsAppButton';
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const Accesorios = () => {
   const router = useRouter();
@@ -41,7 +41,7 @@ const Accesorios = () => {
   const fetchAccesorios = async () => {
     try {
       const response = await axios.get(
-        "https://backpetshopboutique.onrender.com/api/products",
+        "https://admin-petshop-boutique.vercel.app/api/products",
         {
           params: {
             category: "Accesorio",
@@ -186,9 +186,9 @@ const Accesorios = () => {
                 <Image
                   src={producto.imageUrl}
                   alt={producto.name}
-                  layout="fill"
-                  objectFit="contain"
-                  className="rounded"
+                  fill
+                  className="rounded object-contain"
+                  priority
                 />
               </div>
               <p className="text-lg md:text-xl">

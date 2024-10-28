@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import styles from "../styles/Aseo.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
-import WhatsAppButton from '../components/WhatsAppButton';
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const Aseo = () => {
   const router = useRouter();
@@ -41,7 +41,7 @@ const Aseo = () => {
   const fetchAseo = async () => {
     try {
       const response = await axios.get(
-        "https://backpetshopboutique.onrender.com/api/products",
+        "https://admin-petshop-boutique.vercel.app/api/products",
         {
           params: {
             category: "Aseo",
@@ -186,9 +186,9 @@ const Aseo = () => {
                 <Image
                   src={producto.imageUrl}
                   alt={producto.name}
-                  layout="fill"
-                  objectFit="contain"
-                  className="rounded"
+                  fill
+                  className="rounded object-contain"
+                  priority
                 />
               </div>
               <p className="text-lg md:text-xl">

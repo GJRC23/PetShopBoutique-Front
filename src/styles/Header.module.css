@@ -42,7 +42,7 @@
 .banner {
   position: relative;
   background-image: url("https://res.cloudinary.com/dos14xhdl/image/upload/v1729617493/banner_zxop5a.png");
-  background-size: cover;
+  background-size: cover; /* Mantiene la cobertura completa */
   background-position: center;
   background-repeat: no-repeat;
   height: 350px;
@@ -61,10 +61,14 @@
 
 @media (max-width: 640px) {
   .banner {
-    height: 175px;
+    background-image: url("https://res.cloudinary.com/dos14xhdl/image/upload/v1730134806/Background_Petshpop_Boutique_celular_us3wtu.png");
+    background-size: contain;
+    height: 300px;
+    margin-bottom: -120px;
   }
 
   .banner h1 {
+    margin-top: 20px;
     font-size: 1.5rem;
     width: 50%;
   }
