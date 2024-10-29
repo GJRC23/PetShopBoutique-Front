@@ -32,7 +32,7 @@ function Header() {
 
       {/* Main Nav */}
       <nav className={styles.banner}>
-        <div className="flex items-center justify-between w-full px-4 py-2 bg-[#8b4513]">
+        <div className="flex items-center justify-between w-full px-4 py-2">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/Home">
